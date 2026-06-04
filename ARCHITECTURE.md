@@ -29,10 +29,18 @@
 ## Команды
 - «Сгенерируй письмо», «Замечание: …», «Проверь на противоречия»,
   «Повысить C-NNN до core», «humanizer on/off» — описаны в CLAUDE.md.
-- `git save` — флаш: обновить MEMORY.md и ARCHITECTURE.md актуальным состоянием.
-  git НЕ заводим (решение 2026-06-03), истории версий нет — просто перезапись файлов.
+- `git save` — флаш + бэкап: (1) обновить MEMORY.md и ARCHITECTURE.md актуальным
+  состоянием; (2) `git add -A` (inputs/jira исключён через .gitignore), commit, `git push origin main`.
+  Репо: github.com/konicaRu/cover-letter-prompt (main, ПУБЛИЧНЫЙ). Перед коммитом —
+  sanity-check, что Jira не в staged.
 - `git load` — утреннее восстановление: прочитать MEMORY.md + active-правки + humanizer
   и кратко доложить, где остановились. Только чтение, ничего не пишет.
+
+## Бэкап / git
+- Удалённый репозиторий: `github.com/konicaRu/cover-letter-prompt`, ветка `main`, публичный.
+- `.gitignore` исключает `inputs/jira/` (внутренние данные А3 — не публикуем).
+- Прежнее решение «git не заводим» (2026-06-03) отменено 2026-06-04: завели git только
+  ради бэкапа на GitHub.
 
 ## Changelog
 - 2026-06-03 — заведены MEMORY.md и ARCHITECTURE.md; `git save` = обновлять файлы без git.
