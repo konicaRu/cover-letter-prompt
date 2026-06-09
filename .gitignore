@@ -5,3 +5,6 @@ inputs/facts-digest.md
 # Системное
 .DS_Store
 Thumbs.db
+
+# Личные настройки Claude Code (хук звука и т.п.)
+.claude/settings.local.json
