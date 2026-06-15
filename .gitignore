@@ -1,6 +1,8 @@
 # Внутренние данные бывшего работодателя (А3) — НЕ публикуем
 inputs/jira/
 inputs/facts-digest.md
+inputs/cases.md
+prompt/patterns.md
 
 # Системное
 .DS_Store
