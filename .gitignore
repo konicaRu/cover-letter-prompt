@@ -4,6 +4,9 @@ inputs/facts-digest.md
 inputs/cases.md
 prompt/patterns.md
 
+# Личная история откликов (вакансия → отправленное письмо)
+archive/
+
 # Системное
 .DS_Store
 Thumbs.db
