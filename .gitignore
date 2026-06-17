@@ -13,3 +13,5 @@ Thumbs.db
 
 # Личные настройки Claude Code (хук звука и т.п.)
 .claude/settings.local.json
+.claude/.last_sound
+.claude/play_sound.ps1

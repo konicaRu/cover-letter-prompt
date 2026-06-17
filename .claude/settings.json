@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell([console]::beep\\(880,200\\); Start-Sleep -Milliseconds 120; [console]::beep\\(1175,250\\))",
+      "PowerShell($snd='C:\\\\claude_code_projects\\\\tank.mp3'; try{ Add-Type -AssemblyName presentationCore; $p=New-Object System.Windows.Media.MediaPlayer; $p.Open\\([uri]$snd\\); $n=0; while\\(-not $p.NaturalDuration.HasTimeSpan -and $n -lt 20\\){Start-Sleep -Milliseconds 100;$n++}; $d=if\\($p.NaturalDuration.HasTimeSpan\\){$p.NaturalDuration.TimeSpan.TotalSeconds}else{5}; $p.Play\\(\\); Start-Sleep -Seconds \\([math]::Min\\([math]::Ceiling\\($d\\)+1,8\\)\\); $p.Stop\\(\\); $p.Close\\(\\); \"played $snd, dur=$d sec\" }catch{ \"ERROR: $_\" })",
+      "PowerShell(Start-Process -WindowStyle Hidden powershell -ArgumentList '-NoProfile','-Command',\"Add-Type -AssemblyName presentationCore; `$p=New-Object System.Windows.Media.MediaPlayer; `$p.Open\\([uri]'C:\\\\claude_code_projects\\\\tank.mp3'\\); `$p.Play\\(\\); Start-Sleep -Seconds 6; `$p.Stop\\(\\); `$p.Close\\(\\)\"; \"запущен фоновый проигрыватель tank.mp3\")",
+      "Bash(powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden powershell -ArgumentList '\\\\''-NoProfile'\\\\'','\\\\''-Command'\\\\'','\\\\''Add-Type -AssemblyName presentationCore; $p=New-Object System.Windows.Media.MediaPlayer; $p.Open\\([uri]'\\\\'''\\\\''C:\\\\claude_code_projects\\\\tank.mp3'\\\\'''\\\\''\\); $p.Play\\(\\); Start-Sleep -Seconds 6; $p.Stop\\(\\); $p.Close\\(\\)'\\\\''')"
+    ]
+  }
+}
