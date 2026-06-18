@@ -5,7 +5,18 @@
       "PowerShell($snd='C:\\\\claude_code_projects\\\\tank.mp3'; try{ Add-Type -AssemblyName presentationCore; $p=New-Object System.Windows.Media.MediaPlayer; $p.Open\\([uri]$snd\\); $n=0; while\\(-not $p.NaturalDuration.HasTimeSpan -and $n -lt 20\\){Start-Sleep -Milliseconds 100;$n++}; $d=if\\($p.NaturalDuration.HasTimeSpan\\){$p.NaturalDuration.TimeSpan.TotalSeconds}else{5}; $p.Play\\(\\); Start-Sleep -Seconds \\([math]::Min\\([math]::Ceiling\\($d\\)+1,8\\)\\); $p.Stop\\(\\); $p.Close\\(\\); \"played $snd, dur=$d sec\" }catch{ \"ERROR: $_\" })",
       "PowerShell(Start-Process -WindowStyle Hidden powershell -ArgumentList '-NoProfile','-Command',\"Add-Type -AssemblyName presentationCore; `$p=New-Object System.Windows.Media.MediaPlayer; `$p.Open\\([uri]'C:\\\\claude_code_projects\\\\tank.mp3'\\); `$p.Play\\(\\); Start-Sleep -Seconds 6; `$p.Stop\\(\\); `$p.Close\\(\\)\"; \"запущен фоновый проигрыватель tank.mp3\")",
       "Bash(powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden powershell -ArgumentList '\\\\''-NoProfile'\\\\'','\\\\''-Command'\\\\'','\\\\''Add-Type -AssemblyName presentationCore; $p=New-Object System.Windows.Media.MediaPlayer; $p.Open\\([uri]'\\\\'''\\\\''C:\\\\claude_code_projects\\\\tank.mp3'\\\\'''\\\\''\\); $p.Play\\(\\); Start-Sleep -Seconds 6; $p.Stop\\(\\); $p.Close\\(\\)'\\\\''')",
-      "PowerShell($snd='C:\\\\claude_code_projects\\\\tank.mp3'; if\\(-not \\(Test-Path $snd\\)\\){ \"MISSING: $snd\"; return }; try{ Add-Type -AssemblyName presentationCore; $p=New-Object System.Windows.Media.MediaPlayer; $p.Open\\([uri]$snd\\); $n=0; while\\(-not $p.NaturalDuration.HasTimeSpan -and $n -lt 30\\){Start-Sleep -Milliseconds 100;$n++}; $d=if\\($p.NaturalDuration.HasTimeSpan\\){$p.NaturalDuration.TimeSpan.TotalSeconds}else{-1}; $p.Play\\(\\); Start-Sleep -Seconds 3; $p.Stop\\(\\); $p.Close\\(\\); \"PLAYED ok, duration=$d sec, waited_ticks=$n\" }catch{ \"ERROR: $_\" })"
+      "PowerShell($snd='C:\\\\claude_code_projects\\\\tank.mp3'; if\\(-not \\(Test-Path $snd\\)\\){ \"MISSING: $snd\"; return }; try{ Add-Type -AssemblyName presentationCore; $p=New-Object System.Windows.Media.MediaPlayer; $p.Open\\([uri]$snd\\); $n=0; while\\(-not $p.NaturalDuration.HasTimeSpan -and $n -lt 30\\){Start-Sleep -Milliseconds 100;$n++}; $d=if\\($p.NaturalDuration.HasTimeSpan\\){$p.NaturalDuration.TimeSpan.TotalSeconds}else{-1}; $p.Play\\(\\); Start-Sleep -Seconds 3; $p.Stop\\(\\); $p.Close\\(\\); \"PLAYED ok, duration=$d sec, waited_ticks=$n\" }catch{ \"ERROR: $_\" })",
+      "Bash(cat > *)",
+      "Bash(wc -m)",
+      "Bash(wc -c)",
+      "Bash(echo 'Знаков \\(символов\\): __CMDSUB_OUTPUT__')",
+      "Bash(echo 'Байт: __TRACKED_VAR__')",
+      "Bash(python -c 't=open\\(r'\\\\''c:/claude_code_projects/cover-letter-prompt/external-prompts/cover-letter-chatgpt-8000.md'\\\\'',encoding='\\\\''utf-8'\\\\''\\).read\\(\\); print\\('\\\\''Знаков:'\\\\'', len\\(t\\)\\); print\\('\\\\''Статус:'\\\\'', '\\\\''OK ≤8000'\\\\'' if len\\(t\\)<=8000 else '\\\\''ПРЕВЫШЕНО'\\\\''\\)')",
+      "Bash(python -c 't=open\\(r'\\\\''c:/claude_code_projects/cover-letter-prompt/external-prompts/cover-letter-chatgpt-8000.md'\\\\'',encoding='\\\\''utf-8'\\\\''\\).read\\(\\); print\\(len\\(t\\), '\\\\''OK'\\\\'' if len\\(t\\)<=8000 else '\\\\''OVER'\\\\''\\)')",
+      "Bash(python -c 't=open\\(r'\\\\''c:/claude_code_projects/cover-letter-prompt/external-prompts/cover-letter-chatgpt-8000.md'\\\\'',encoding='\\\\''utf-8'\\\\''\\).read\\(\\); print\\(len\\(t\\)\\)')"
+    ],
+    "additionalDirectories": [
+      "\\tmp"
     ]
   }
 }
