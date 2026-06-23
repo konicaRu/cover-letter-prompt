@@ -13,7 +13,8 @@
       "Bash(echo 'Байт: __TRACKED_VAR__')",
       "Bash(python -c 't=open\\(r'\\\\''c:/claude_code_projects/cover-letter-prompt/external-prompts/cover-letter-chatgpt-8000.md'\\\\'',encoding='\\\\''utf-8'\\\\''\\).read\\(\\); print\\('\\\\''Знаков:'\\\\'', len\\(t\\)\\); print\\('\\\\''Статус:'\\\\'', '\\\\''OK ≤8000'\\\\'' if len\\(t\\)<=8000 else '\\\\''ПРЕВЫШЕНО'\\\\''\\)')",
       "Bash(python -c 't=open\\(r'\\\\''c:/claude_code_projects/cover-letter-prompt/external-prompts/cover-letter-chatgpt-8000.md'\\\\'',encoding='\\\\''utf-8'\\\\''\\).read\\(\\); print\\(len\\(t\\), '\\\\''OK'\\\\'' if len\\(t\\)<=8000 else '\\\\''OVER'\\\\''\\)')",
-      "Bash(python -c 't=open\\(r'\\\\''c:/claude_code_projects/cover-letter-prompt/external-prompts/cover-letter-chatgpt-8000.md'\\\\'',encoding='\\\\''utf-8'\\\\''\\).read\\(\\); print\\(len\\(t\\)\\)')"
+      "Bash(python -c 't=open\\(r'\\\\''c:/claude_code_projects/cover-letter-prompt/external-prompts/cover-letter-chatgpt-8000.md'\\\\'',encoding='\\\\''utf-8'\\\\''\\).read\\(\\); print\\(len\\(t\\)\\)')",
+      "Bash(netstat -ano)"
     ],
     "additionalDirectories": [
       "\\tmp"
