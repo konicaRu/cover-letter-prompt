@@ -14,10 +14,53 @@
       "Bash(python -c 't=open\\(r'\\\\''c:/claude_code_projects/cover-letter-prompt/external-prompts/cover-letter-chatgpt-8000.md'\\\\'',encoding='\\\\''utf-8'\\\\''\\).read\\(\\); print\\('\\\\''Знаков:'\\\\'', len\\(t\\)\\); print\\('\\\\''Статус:'\\\\'', '\\\\''OK ≤8000'\\\\'' if len\\(t\\)<=8000 else '\\\\''ПРЕВЫШЕНО'\\\\''\\)')",
       "Bash(python -c 't=open\\(r'\\\\''c:/claude_code_projects/cover-letter-prompt/external-prompts/cover-letter-chatgpt-8000.md'\\\\'',encoding='\\\\''utf-8'\\\\''\\).read\\(\\); print\\(len\\(t\\), '\\\\''OK'\\\\'' if len\\(t\\)<=8000 else '\\\\''OVER'\\\\''\\)')",
       "Bash(python -c 't=open\\(r'\\\\''c:/claude_code_projects/cover-letter-prompt/external-prompts/cover-letter-chatgpt-8000.md'\\\\'',encoding='\\\\''utf-8'\\\\''\\).read\\(\\); print\\(len\\(t\\)\\)')",
-      "Bash(netstat -ano)"
+      "Bash(netstat -ano)",
+      "Bash(claude plugin *)",
+      "WebSearch",
+      "Bash(curl -s \"https://api.github.com/repos/anthropics/claude-plugins-official/contents/plugins\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/anthropics/claude-plugins-official/main/.claude-plugin/marketplace.json\")",
+      "Bash(curl -s \"https://api.github.com/repos/anthropics/claude-plugins-official/contents/plugins/claude-code-setup\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/anthropics/claude-plugins-official/main/plugins/claude-code-setup/README.md\")",
+      "Bash(curl -s \"https://api.github.com/repos/anthropics/claude-plugins-official/contents/plugins/claude-code-setup/skills\")",
+      "Bash(command -v jq)",
+      "Bash(echo \"jq: $\\(command -v jq || echo НЕТ\\)\")",
+      "Bash(echo '{\"tool_input\":{\"file_path\":\"c:\\\\\\\\claude_code_projects\\\\\\\\cover-letter-prompt\\\\\\\\prompt\\\\\\\\core.md\"}}')",
+      "Bash(bash .claude/hooks/guard-core.sh)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(echo '{\"tool_input\":{\"file_path\":\"c:\\\\\\\\claude_code_projects\\\\\\\\cover-letter-prompt\\\\\\\\prompt\\\\\\\\corrections.md\"}}')",
+      "Bash(bash .claude/hooks/guard-commit.sh)",
+      "Bash(python -c \"import json;d=json.load\\(open\\('.claude/settings.json',encoding='utf-8'\\)\\);h=d['hooks']['PreToolUse'];print\\('JSON OK, PreToolUse hooks:',len\\(h\\)\\);[print\\(' -',x['matcher'],'->',x['hooks'][0]['command']\\) for x in h]\")"
     ],
     "additionalDirectories": [
       "\\tmp"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /c/claude_code_projects/cover-letter-prompt/.claude/hooks/guard-core.sh",
+            "shell": "bash",
+            "timeout": 10,
+            "statusMessage": "Проверка: ядро core.md заблокировано"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /c/claude_code_projects/cover-letter-prompt/.claude/hooks/guard-commit.sh",
+            "shell": "bash",
+            "timeout": 15,
+            "statusMessage": "Проверка: приватные файлы не в коммите"
+          }
+        ]
+      }
     ]
   }
 }
