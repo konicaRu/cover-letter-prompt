@@ -30,7 +30,10 @@
       "Bash(echo '{\"tool_input\":{\"file_path\":\"c:\\\\\\\\claude_code_projects\\\\\\\\cover-letter-prompt\\\\\\\\prompt\\\\\\\\corrections.md\"}}')",
       "Bash(bash .claude/hooks/guard-commit.sh)",
       "Bash(python -c \"import json;d=json.load\\(open\\('.claude/settings.json',encoding='utf-8'\\)\\);h=d['hooks']['PreToolUse'];print\\('JSON OK, PreToolUse hooks:',len\\(h\\)\\);[print\\(' -',x['matcher'],'->',x['hooks'][0]['command']\\) for x in h]\")",
-      "PowerShell(Start-Process -WindowStyle Hidden powershell -ArgumentList '-NoProfile','-Command',\"Add-Type -AssemblyName presentationCore; `$p=New-Object System.Windows.Media.MediaPlayer; `$p.Open\\([uri]'C:\\\\claude_code_projects\\\\tank.mp3'\\); `$p.Play\\(\\); Start-Sleep -Seconds 6; `$p.Stop\\(\\); `$p.Close\\(\\)\")"
+      "PowerShell(Start-Process -WindowStyle Hidden powershell -ArgumentList '-NoProfile','-Command',\"Add-Type -AssemblyName presentationCore; `$p=New-Object System.Windows.Media.MediaPlayer; `$p.Open\\([uri]'C:\\\\claude_code_projects\\\\tank.mp3'\\); `$p.Play\\(\\); Start-Sleep -Seconds 6; `$p.Stop\\(\\); `$p.Close\\(\\)\")",
+      "Bash(mkdir -p C:/Users/w-w3/.claude/skills)",
+      "Bash(cp -r C:/Users/w-w3/AppData/Local/Temp/claude/c--claude-code-projects-cover-letter-prompt/82d5c81a-6c8b-48f0-a6ee-f70952cb5a4b/scratchpad/humanizer-ru/skills/humanizer-ru C:/Users/w-w3/.claude/skills/humanizer-ru)",
+      "Bash(python -c \"import razdel, pymorphy3; print\\('OK: пакеты есть'\\)\")"
     ],
     "additionalDirectories": [
       "\\tmp"
