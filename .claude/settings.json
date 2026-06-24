@@ -29,7 +29,8 @@
       "Bash(echo \"exit=$?\")",
       "Bash(echo '{\"tool_input\":{\"file_path\":\"c:\\\\\\\\claude_code_projects\\\\\\\\cover-letter-prompt\\\\\\\\prompt\\\\\\\\corrections.md\"}}')",
       "Bash(bash .claude/hooks/guard-commit.sh)",
-      "Bash(python -c \"import json;d=json.load\\(open\\('.claude/settings.json',encoding='utf-8'\\)\\);h=d['hooks']['PreToolUse'];print\\('JSON OK, PreToolUse hooks:',len\\(h\\)\\);[print\\(' -',x['matcher'],'->',x['hooks'][0]['command']\\) for x in h]\")"
+      "Bash(python -c \"import json;d=json.load\\(open\\('.claude/settings.json',encoding='utf-8'\\)\\);h=d['hooks']['PreToolUse'];print\\('JSON OK, PreToolUse hooks:',len\\(h\\)\\);[print\\(' -',x['matcher'],'->',x['hooks'][0]['command']\\) for x in h]\")",
+      "PowerShell(Start-Process -WindowStyle Hidden powershell -ArgumentList '-NoProfile','-Command',\"Add-Type -AssemblyName presentationCore; `$p=New-Object System.Windows.Media.MediaPlayer; `$p.Open\\([uri]'C:\\\\claude_code_projects\\\\tank.mp3'\\); `$p.Play\\(\\); Start-Sleep -Seconds 6; `$p.Stop\\(\\); `$p.Close\\(\\)\")"
     ],
     "additionalDirectories": [
       "\\tmp"
