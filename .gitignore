@@ -1,7 +1,10 @@
-# Внутренние данные бывшего работодателя (А3) — НЕ публикуем
+# Внутренние данные бывших работодателей — НЕ публикуем
 inputs/jira/
+inputs/b2bcenter/
 inputs/facts-digest.md
 inputs/cases.md
+inputs/cases-b2b.md
+inputs/resume/variants/
 prompt/patterns.md
 
 # Личная история откликов (вакансия → отправленное письмо)

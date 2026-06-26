@@ -7,7 +7,7 @@ case "$input" in
   *) exit 0 ;;
 esac
 staged=$(git diff --cached --name-only 2>/dev/null)
-bad=$(printf '%s\n' "$staged" | grep -E 'inputs/jira|(^|/)archive/|cases\.md|facts-digest\.md')
+bad=$(printf '%s\n' "$staged" | grep -E 'inputs/jira|inputs/b2bcenter|inputs/resume/variants|(^|/)archive/|cases.*\.md|facts-digest\.md')
 if [ -n "$bad" ]; then
   echo "BLOCKED: в staged приватные файлы — репозиторий ПУБЛИЧНЫЙ, коммитить нельзя:" >&2
   printf '  %s\n' $bad >&2
