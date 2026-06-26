@@ -35,10 +35,13 @@
       "Bash(cp -r C:/Users/w-w3/AppData/Local/Temp/claude/c--claude-code-projects-cover-letter-prompt/82d5c81a-6c8b-48f0-a6ee-f70952cb5a4b/scratchpad/humanizer-ru/skills/humanizer-ru C:/Users/w-w3/.claude/skills/humanizer-ru)",
       "Bash(python -c \"import razdel, pymorphy3; print\\('OK: пакеты есть'\\)\")",
       "Bash(grep -nE '^#{1,3} ' /c/claude_code_projects/cover-letter-prompt/archive/applications.md)",
-      "Bash(awk '{print $5\" байт\"}')"
+      "Bash(awk '{print $5\" байт\"}')",
+      "Bash(cat)",
+      "Bash(rm -f /tmp/cl_commit_msg.txt)"
     ],
     "additionalDirectories": [
-      "\\tmp"
+      "\\tmp",
+      "C:\\Users\\w-w3\\.claude"
     ]
   },
   "hooks": {
